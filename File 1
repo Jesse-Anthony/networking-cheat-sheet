@@ -1,0 +1,40 @@
+# Networking Cheat Sheet
+
+##  Common Commands
+
+### Windows
+- `ipconfig` → Show basic IP configuration
+- `ipconfig /all` → Show detailed network info
+- `ping 8.8.8.8` → Test connectivity to Google DNS
+- `tracert google.com` → Trace route to a domain
+- `netstat -an` → Show active connections and listening ports
+
+### Linux
+- `ifconfig` → Show interface configuration
+- `ip addr show` → Display IP addresses
+- `ping -c 4 8.8.8.8` → Ping 4 times
+- `traceroute google.com` → Trace packet path
+- `netstat -tuln` → List listening ports
+- `ss -tuln` → Modern alternative to netstat
+
+---
+
+##  Subnetting Quick Reference
+
+| CIDR | Subnet Mask     | # of Hosts | Notes                  |
+|------|-----------------|------------|------------------------|
+| /30  | 255.255.255.252 | 2 usable   | Point‑to‑point links   |
+| /29  | 255.255.255.248 | 6 usable   | Small LAN segments     |
+| /28  | 255.255.255.240 | 14 usable  | Small office networks  |
+| /24  | 255.255.255.0   | 254 usable | Common home/office LAN |
+| /16  | 255.255.0.0     | 65,534     | Large enterprise nets  |
+| /8   | 255.0.0.0       | 16,777,214 | Very large networks    |
+
+---
+
+##  Troubleshooting Checklist
+1. Check cables/Wi‑Fi connection
+2. Verify IP address and gateway
+3. Ping your gateway
+4. Ping external site (e.g., 8.8.8.8)
+5. Use traceroute to find where packets drop
